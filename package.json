@@ -1,0 +1,46 @@
+{
+  "name": "root-name",
+  "version": "0.0.1",
+  "description": "Extract root name of a name",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "pretest": "npm run clean && npm run tsc",
+    "test": "ava --no-cache --verbose lib/**/*.test.js",
+    "posttest": "npm run clean-test-code",
+    "tsc": "tsc",
+    "tscw": "tsc -w",
+    "preversion": "npm run tsc",
+    "postversion": "git push --follow-tags",
+    "prepublishOnly": "npm run tsc && npm run clean-test-code",
+    "clean": "rm -fr ./lib && rm -fr ./types",
+    "clean-test-code": "rm -fr ./lib/**/*.test.js && rm -fr ./types/**/*.test.d.ts"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitica/root-name.git"
+  },
+  "keywords": [
+    "root-name",
+    "rootname",
+    "name",
+    "root",
+    "stemmer"
+  ],
+  "author": "Dumitru Cantea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitica/root-name/issues"
+  },
+  "homepage": "https://github.com/Mitica/root-name#readme",
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/node": "latest",
+    "ava": "^0.23.0",
+    "debug": "^3.1.0",
+    "typescript": "latest"
+  }
+}

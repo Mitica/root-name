@@ -4,7 +4,8 @@ import suffixTransform from './transformers/suffixTransformer'
 
 export default function rootName(name: string, lang: string): string {
     if (!isSupportedLanguage(lang)) {
-        throw new Error(`Unsupported language: ${lang}`)
+        debug(`Unsupported language: ${lang}`);
+        return name;
     }
     const langData = DATA[lang]
     for (let data of langData) {

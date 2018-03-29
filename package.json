@@ -1,6 +1,6 @@
 {
   "name": "root-name",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extract root name of a name",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",

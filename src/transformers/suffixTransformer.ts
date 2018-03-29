@@ -9,11 +9,11 @@ export default function transform(name: string, lang: string): string {
     const MIN_WORD_LENGTH = 2
     if (rules) {
         let names: TransformWord[] = name.split(/\s+/g).map(word => ({ word, transform: word.length > MIN_WORD_LENGTH }))
-        switch (lang) {
-            case 'ro':
-                names.forEach((item, i) => item.transform = item.transform && i == 0)
-                break
-        }
+        // switch (lang) {
+        //     case 'ro':
+        //         names.forEach((item, i) => item.transform = item.transform && i == 0)
+        //         break
+        // }
         const rootNames = names.map(item => {
             if (item.transform) {
                 const w = internalTransform(rules, item.word)
@@ -30,7 +30,7 @@ export default function transform(name: string, lang: string): string {
 
 function internalTransform(rules: Rule[], name: string): string {
     for (let rule of rules) {
-        let root = name.replace(rule.reg, rule.replace)
+        let root = name.replace(rule.reg, rule.replace || '')
         if (root !== name) {
             return root
         }
@@ -40,24 +40,37 @@ function internalTransform(rules: Rule[], name: string): string {
 
 type Rule = {
     reg: RegExp,
-    replace: string,
+    replace?: string,
 }
 
 const DATA: { [lang: string]: Rule[] } = {
     ro: [
         {
             /**
-             * Mariei
+             * Mari(ei), An(a)
              */
             reg: /(-ului|-lui|ei|a|[`']s)$/i,
-            replace: '',
         },
         {
             /**
-             * Partidului
+             * Partid(ului)
              */
-            reg: /(lui)$/i,
-            replace: 'l',
+            reg: /(ul)ui$/i,
+            replace: '$1',
+        },
+        {
+            /**
+             * Comisiei Europ(ene)
+             */
+            reg: /(e)[^aoieu]e$/i,
+            replace: '$1',
+        },
+        {
+            /**
+             * Federației Ru(se)
+             */
+            reg: /([^aoieu])e$/i,
+            replace: '$1',
         },
     ],
     ru: [
@@ -69,7 +82,6 @@ const DATA: { [lang: string]: Rule[] } = {
              * Единая, Единой, Единого
              */
             reg: /(йские|йском|йской|йский|йская|йскую|ские|ском|ской|ский|ская|скую|ого|ым|ом|ой|ая|а|у|е|я|и|ю|[`']s)$/i,
-            replace: '',
         },
     ],
 }

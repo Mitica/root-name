@@ -49,7 +49,7 @@ const DATA: { [lang: string]: Rule[] } = {
             /**
              * Mari(ei), An(a)
              */
-            reg: /(-ului|-lui|ei|a|[`']s)$/i,
+            reg: /(-ului|-lui|[`']s)$/i,
         },
         {
             /**
@@ -60,17 +60,30 @@ const DATA: { [lang: string]: Rule[] } = {
         },
         {
             /**
+             * Comisia Europeană -> Comisi Europe
+             */
+            reg: /(e)a[^ăîâaoieu](a|ă)$/i,
+            replace: '$1',
+        },
+        {
+            /**
              * Comisiei Europ(ene)
              */
-            reg: /(e)[^aoieu]e$/i,
+            reg: /(e)ne$/i,
             replace: '$1',
         },
         {
             /**
              * Federației Ru(se)
              */
-            reg: /([^aoieu])e$/i,
+            reg: /([^ăîâaoieu])e$/i,
             replace: '$1',
+        },
+        {
+            /**
+             * Mari(ei), An(a)
+             */
+            reg: /(ei|a|ă)$/i,
         },
     ],
     ru: [

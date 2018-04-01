@@ -16,6 +16,7 @@ rootName('Владимира Путина', lang) // Владимир Путин
 rootName('Санкт-Петербургской', lang) // Санкт-Петербург
 
 rootName('Federației Ruse', 'ro') // Federați Rus
+rootName('Federația Rusă', 'ro') // Federați Rus
 rootName('COMISIEI EUROPENe', 'ro') // COMISI EUROPE
 
 ```

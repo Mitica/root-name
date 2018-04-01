@@ -20,7 +20,9 @@ const DATA: { [lang: string]: Array<Array<string>> } = {
         ['Ministerului Educației', 'Ministerul Educați'],
         ['Comisiei Europene', 'Comisi Europe'],
         ['COMISIEI EUROPENe', 'COMISI EUROPE'],
+        ['Comisia Europeană', 'Comisi Europe'],
         ['Federației Ruse', 'Federați Rus'],
+        ['Federația Rusă', 'Federați Rus'],
     ],
     ru: [
         ['Путина', 'Путин'], ['Путину', 'Путин'], ['Путиным', 'Путин'], ['Путине', 'Путин'],

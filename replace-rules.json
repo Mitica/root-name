@@ -1,0 +1,79 @@
+{
+    "ro": [
+        {
+            "reg": "(-ului|-lui|[`']s)$",
+            "flags": "i",
+            "accuracy": 2,
+            "examples": {}
+        },
+        {
+            "reg": "(ul)ui$",
+            "flags": "i",
+            "replace": "$1",
+            "accuracy": 2,
+            "examples": {
+                "Partidului": "Partidul"
+            }
+        },
+        {
+            "reg": "(e)a[^ăîâaoieu](a|ă)$",
+            "replace": "$1",
+            "accuracy": 1,
+            "examples": {
+                "Comisia Europeană": "Comisi Europe",
+                "Comisia EUROPEANĂ": "Comisi EUROPEANĂ"
+            }
+        },
+        {
+            "reg": "(e)ne$",
+            "replace": "$1",
+            "accuracy": 1,
+            "examples": {
+                "Comisiei Europene": "Comisiei Europe",
+                "Comisiei EUROPENE": "Comisiei EUROPENE"
+            }
+        },
+        {
+            "reg": "([^ăîâaoieu])e$",
+            "replace": "$1",
+            "accuracy": 1,
+            "examples": {
+                "Federației Ruse": "Federației Rus"
+            }
+        },
+        {
+            "reg": "(ei|a|ă)$",
+            "accuracy": 1,
+            "examples": {
+                "Mariei": "Mari",
+                "Anei": "An"
+            }
+        }
+    ],
+    "ru": [
+        {
+            "reg": "(йские|йском|йской|йский|йская|йскую|ские|ском|ской|ский|ская|скую)$",
+            "accuracy": 0,
+            "examples": {
+                "Петербургская": "Петербург",
+                "Петербургский": "Петербург"
+            }
+        },
+        {
+            "reg": "(ого|ым|ом|ой|ая)$",
+            "accuracy": 1,
+            "examples": {
+                "Единой": "Един",
+                "Единого": "Един"
+            }
+        },
+        {
+            "reg": "(а|у|е|я|и|ю|[`']s)$",
+            "accuracy": 2,
+            "examples": {
+                "Путина": "Путин",
+                "Путину": "Путин"
+            }
+        }
+    ]
+}

@@ -20,3 +20,20 @@ rootName('Federația Rusă', 'ro') // Federați Rus
 rootName('COMISIEI EUROPENe', 'ro') // COMISI EUROPE
 
 ```
+
+## API
+
+### rootName(name: string, lang: string, options?: Options): string
+
+```ts
+export enum RuleAccuracy {
+    LOW = 0,
+    NORMAL = 1,
+    HIGH = 2
+}
+
+export type Options = {
+    accuracy?: RuleAccuracy
+    minWordLength?: number
+}
+```

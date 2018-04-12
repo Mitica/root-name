@@ -1,15 +1,16 @@
 
 import { debug, isSupportedLanguage } from './utils'
-import suffixTransform from './transformers/suffixTransformer'
+import replaceTransform from './transformers/replaceTransformer'
+import { Options } from './options';
 
-export default function rootName(name: string, lang: string): string {
+export default function rootName(name: string, lang: string, options?: Options): string {
     if (!isSupportedLanguage(lang)) {
         debug(`Unsupported language: ${lang}`);
         return name;
     }
     const langData = DATA[lang]
     for (let data of langData) {
-        let root = data.transform(name, lang)
+        let root = data.transform(name, lang, options)
         if (root !== name) {
             debug(`tranformed from ${name} => ${root}`)
             if (data.stop) {
@@ -22,17 +23,15 @@ export default function rootName(name: string, lang: string): string {
 }
 
 interface ITransform {
-    (name: string, lang: string): string
+    (name: string, lang: string, options?: Options): string
 }
-
-
 
 
 const DATA: { [lang: string]: Array<{ transform: ITransform, stop: boolean }> } = {
     ro: [
-        { transform: suffixTransform, stop: true },
+        { transform: replaceTransform, stop: true },
     ],
     ru: [
-        { transform: suffixTransform, stop: true },
+        { transform: replaceTransform, stop: true },
     ],
 }

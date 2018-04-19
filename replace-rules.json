@@ -34,6 +34,22 @@
             }
         },
         {
+            "reg": "ii$",
+            "accuracy": 1,
+            "examples": {
+                "Uniunii Europene": "Uniun Europene",
+                "Marii": "Mar"
+            }
+        },
+        {
+            "reg": "(ei|ea)$",
+            "accuracy": 1,
+            "examples": {
+                "Uniunei Europene": "Uniun Europene",
+                "Marea": "Mar"
+            }
+        },
+        {
             "reg": "([^ăîâaoieu])e$",
             "replace": "$1",
             "accuracy": 1,

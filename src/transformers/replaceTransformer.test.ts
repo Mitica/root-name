@@ -31,6 +31,8 @@ const DATA: { [lang: string]: Array<Array<string>> } = {
         ['Fundației Creștină', 'Fundați Creștin'],
         ['Curții Constituționale', 'Curț Constituțional'],
         ['Curtea Constituțională', 'Curt Constituțional'],
+        ['Curții Supreme de Justiție', 'Curț Suprem de Justiți'],
+        ['Curtea Supremă de Justiție', 'Curt Suprem de Justiți'],
     ],
     ru: [
         ['Путина', 'Путин'], ['Путину', 'Путин'], ['Путиным', 'Путин'],

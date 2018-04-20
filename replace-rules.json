@@ -50,8 +50,7 @@
             }
         },
         {
-            "reg": "([^ăîâaoieu])e$",
-            "replace": "$1",
+            "reg": "e$",
             "accuracy": 1,
             "examples": {
                 "Federației Ruse": "Federației Rus"

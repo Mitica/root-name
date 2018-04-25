@@ -42,10 +42,9 @@
             }
         },
         {
-            "reg": "(ei|ea)$",
+            "reg": "(ea)$",
             "accuracy": 1,
             "examples": {
-                "Uniunei Europene": "Uniun Europene",
                 "Marea": "Mar"
             }
         },
@@ -59,7 +58,7 @@
         },
         {
             "reg": "(ei|a|ă)$",
-            "accuracy": 1,
+            "accuracy": 2,
             "examples": {
                 "Mariei": "Mari",
                 "Anei": "An"
